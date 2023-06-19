@@ -11,6 +11,13 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private FixedJoystick jys;
     [SerializeField] private Animator animator;
 
+    public List<GameObject> CollectGemList = new List<GameObject>();
+
+    public Transform bag;
+
+    int GemLimit = 5;
+
+
     [SerializeField] private float moveSpeed;
     private void FixedUpdate()
     {
@@ -23,7 +30,23 @@ public class PlayerMovement : MonoBehaviour
         }
         else
             animator.SetBool("isWalking", false);
-        
+
 
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Gem"))
+        {
+            if (CollectGemList.Count <= GemLimit)
+            {
+                other.transform.position = new Vector3(bag.transform.position.x, 1f + ((float)CollectGemList.Count), bag.transform.position.z);
+                other.transform.SetParent(this.gameObject.transform);
+                CollectGemList.Add(other.gameObject);
+            }
+        }
+    }
+
+
+
 }
