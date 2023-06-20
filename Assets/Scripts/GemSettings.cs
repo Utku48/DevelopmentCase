@@ -4,32 +4,36 @@ using UnityEngine;
 using DG.Tweening;
 public class GemSettings : MonoBehaviour
 {
-    public GameObject player;
+
 
     private Tween GemScaleTween;
     private void Start()
     {
-        player = GetComponent<GameObject>();
-        GemScaleTween = this.gameObject.transform.DOScale(Vector3.one * 1, 5);
-        //GemScaleTween.OnPause(OnTweenPaused);
 
+        GemScaleTween = this.gameObject.transform.DOScale(Vector3.one * 1, 5);
+        StartCoroutine(EnableCollider());
+    }
+    IEnumerator EnableCollider()
+    {
+        yield return new WaitForSeconds(1.25f);
+        GetComponent<Collider>().enabled = true;
 
     }
 
-    //private void Update()
-    //{
-    //    if (PlayerMovement.isTouch == true)
-    //    {
-    //        GemScaleTween.Pause();
-    //    }
-    //}
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            GemScaleTween.Pause();
+        }
+    }
 
-    //private void OnTweenPaused()
-    //{
-    //    Debug.Log("Animasyon durdu");
+    private void OnTweenPaused()
+    {
+        Debug.Log("Animasyon durdu");
 
-    //}
+    }
 
 
-   
+
 }

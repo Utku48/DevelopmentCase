@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 1139969782171514108}
   - component: {fileID: 2897234252361089078}
   - component: {fileID: 4608482668730673666}
-  - component: {fileID: 4608482668730673667}
+  - component: {fileID: -7693832213697894387}
   m_Layer: 0
   m_Name: Gem_Green
-  m_TagString: Gem
+  m_TagString: GemG
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -94,12 +94,12 @@ MeshCollider:
   m_GameObject: {fileID: 3690127341091840483}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4126542436946315128, guid: c5331af9ae3883e4f8338f8483fbab83, type: 3}
---- !u!114 &4608482668730673667
+--- !u!114 &-7693832213697894387
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -111,4 +111,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7058195750f5c2488e8f9a3c6cd3a34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}

@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 473559732982531026}
   - component: {fileID: 2411285455351494424}
   - component: {fileID: 3942636463128570632}
-  - component: {fileID: 3942636463128570633}
+  - component: {fileID: 2588675189189315095}
   m_Layer: 0
   m_Name: Gem_Yellow
-  m_TagString: Gem
+  m_TagString: GemY
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -94,12 +94,12 @@ MeshCollider:
   m_GameObject: {fileID: 4212667925848725197}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -536243315086849303, guid: b7bf6d24eb072f9479ae6a78458e2528, type: 3}
---- !u!114 &3942636463128570633
+--- !u!114 &2588675189189315095
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -111,4 +111,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7058195750f5c2488e8f9a3c6cd3a34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
