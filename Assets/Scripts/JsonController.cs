@@ -6,7 +6,7 @@ using System.IO;
 
 public class JsonController : MonoBehaviour
 {
-    public JsonSave save;
+    public static JsonSave save;
 
     private void Start()
     {

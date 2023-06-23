@@ -10,25 +10,37 @@ public class PanelController : MonoBehaviour
     private bool isOn = false;
 
     public TextMeshProUGUI SellGreenText;
-    public static float soldGreen;
+    public static int soldGreen;
     public TextMeshProUGUI GoldG;
-    public static float goldG;
+    public static int goldG;
 
     public TextMeshProUGUI SellYellowText;
-    public static float soldYellow;
+    public static int soldYellow;
     public TextMeshProUGUI GoldY;
-    public static float goldY;
+    public static int goldY;
 
     public TextMeshProUGUI SellPurpleText;
-    public static float soldPurple;
+    public static int soldPurple;
     public TextMeshProUGUI GoldP;
-    public static float goldP;
+    public static int goldP;
+
+
     void Start()
     {
+        soldGreen = JsonController.save.sellGemCountG;
+        soldYellow = JsonController.save.sellGemCountY;
+        soldPurple = JsonController.save.sellGemCountP;
+
+        goldP = JsonController.save.GoldP;
+        goldY = JsonController.save.GoldY;
+        goldG = JsonController.save.GoldG;
+
+
+
         panel.SetActive(false);
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         SellGreenText.text = "Satılan Adet: " + soldGreen;
@@ -43,8 +55,6 @@ public class PanelController : MonoBehaviour
     {
         isOn = !isOn;
         panel.SetActive(isOn);
-
-
     }
 
 

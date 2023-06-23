@@ -111,42 +111,42 @@ public class PlayerMovement : MonoBehaviour
             if (scale.x > 0 && scale.x <= 0.5f)
             {
 
-                _scoreManager.ScorePlus(Kelek + (boyut * 100));
+                _scoreManager.ScorePlus(Kelek + (int)(boyut * 100));
 
                 if (gem.CompareTag("GemG"))
                 {
-                    PanelController.goldG += (Kelek + (boyut * 100));
+                    PanelController.goldG += (int)(Kelek + (boyut * 100));
 
                 }
                 else if (gem.CompareTag("GemY"))
                 {
-                    PanelController.goldY += (Kelek + (boyut * 100));
+                    PanelController.goldY += (int)(Kelek + (boyut * 100));
 
                 }
                 else if (gem.CompareTag("GemP"))
                 {
-                    PanelController.goldP += (Kelek + (boyut * 100));
+                    PanelController.goldP += (int)(Kelek + (boyut * 100));
 
                 }
             }
             if (scale.x > 0.5f && scale.x <= 0.75f)
             {
 
-                _scoreManager.ScorePlus(Buyumus + (boyut * 100));
+                _scoreManager.ScorePlus(Buyumus + (int)(boyut * 100));
 
                 if (gem.CompareTag("GemG"))
                 {
-                    PanelController.goldG += (Buyumus + (boyut * 100));
+                    PanelController.goldG += (int)(Buyumus + (boyut * 100));
                     Debug.Log("Buyumus Yesil");
                 }
                 else if (gem.CompareTag("GemY"))
                 {
-                    PanelController.goldY += (Buyumus + (boyut * 100));
+                    PanelController.goldY += (int)(Buyumus + (boyut * 100));
                     Debug.Log("Buyumus Sarı");
                 }
                 else if (gem.CompareTag("GemP"))
                 {
-                    PanelController.goldP += (Buyumus + (boyut * 100));
+                    PanelController.goldP += (int)(Buyumus + (boyut * 100));
                     Debug.Log("Buyumus Mor");
                 }
 
@@ -154,20 +154,20 @@ public class PlayerMovement : MonoBehaviour
             if (scale.x > 0.75f && scale.x <= 1f)
             {
 
-                _scoreManager.ScorePlus(Ergin + (boyut * 100));
+                _scoreManager.ScorePlus(Ergin + (int)(boyut * 100));
                 if (gem.CompareTag("GemG"))
                 {
-                    PanelController.goldG += (Ergin + (boyut * 100));
+                    PanelController.goldG += (Ergin + (int)(boyut * 100));
                     Debug.Log("Ergin Yesil");
                 }
                 else if (gem.CompareTag("GemY"))
                 {
-                    PanelController.goldY += (Ergin + (boyut * 100));
+                    PanelController.goldY += (Ergin + (int)(boyut * 100));
                     Debug.Log("Ergin Sarı");
                 }
                 else if (gem.CompareTag("GemP"))
                 {
-                    PanelController.goldP += (Ergin + (boyut * 100));
+                    PanelController.goldP += (Ergin + (int)(boyut * 100));
                     Debug.Log("Ergin Mor");
                 }
             }

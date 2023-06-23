@@ -8,10 +8,14 @@ public class ScoreManager : MonoBehaviour
 {
 
     public TextMeshProUGUI text;
-    public static float score;
+    public static int score;
 
-
-    public void ScorePlus(float value)
+    private void Start()
+    {
+        score = JsonController.save.money;
+        text.text = "MoneyIsMoney: " + (int)score;
+    }
+    public void ScorePlus(int value)
     {
         score += value;
         text.text = "MoneyIsMoney: " + (int)score;

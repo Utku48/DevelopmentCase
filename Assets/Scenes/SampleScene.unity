@@ -671,7 +671,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 554160109}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -4484,11 +4484,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bd0cbf10277daf4e9586fce6f981e69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  save:
-    money: 0
-    sellGemCountY: 0
-    sellGemCountG: 0
-    sellGemCountP: 0
 --- !u!4 &5901452235484273540
 Transform:
   m_ObjectHideFlags: 0
