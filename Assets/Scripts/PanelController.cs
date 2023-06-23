@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using Unity.VisualScripting;
+
 
 public class PanelController : MonoBehaviour
 {
@@ -10,17 +10,17 @@ public class PanelController : MonoBehaviour
     private bool isOn = false;
 
     public TextMeshProUGUI SellGreenText;
-    public static float sellGreen;
+    public static float soldGreen;
     public TextMeshProUGUI GoldG;
     public static float goldG;
 
     public TextMeshProUGUI SellYellowText;
-    public static float sellYellow;
+    public static float soldYellow;
     public TextMeshProUGUI GoldY;
     public static float goldY;
 
     public TextMeshProUGUI SellPurpleText;
-    public static float sellPurple;
+    public static float soldPurple;
     public TextMeshProUGUI GoldP;
     public static float goldP;
     void Start()
@@ -31,11 +31,11 @@ public class PanelController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        SellGreenText.text = "Satılan Adet: " + sellGreen;
+        SellGreenText.text = "Satılan Adet: " + soldGreen;
         GoldG.text = "Gold: " + goldG;
-        SellYellowText.text = "Satılan Adet: " + sellYellow;
+        SellYellowText.text = "Satılan Adet: " + soldYellow;
         GoldY.text = "Gold: " + goldY;
-        SellPurpleText.text = "Satılan Adet: " + sellPurple;
+        SellPurpleText.text = "Satılan Adet: " + soldPurple;
         GoldP.text = "Gold: " + goldP;
     }
 

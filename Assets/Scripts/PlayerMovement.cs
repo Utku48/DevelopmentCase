@@ -87,7 +87,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-
         inSellArea = false;
     }
 
@@ -96,7 +95,7 @@ public class PlayerMovement : MonoBehaviour
         if (CollectGemList.Count > 0 && inSellArea == true)
         {
 
-            GameObject gem = CollectGemList[CollectGemList.Count - 1]; // Listenin sonundaki objeyi al        
+            GameObject gem = CollectGemList[CollectGemList.Count - 1]; // Listenin sonundaki objeyi
             CollectGemList.RemoveAt(CollectGemList.Count - 1); // Listenin sonundaki objeyi sil
 
             bag.transform.position -= Vector3.up;
@@ -111,35 +110,82 @@ public class PlayerMovement : MonoBehaviour
             #region fiyat hesaplama
             if (scale.x > 0 && scale.x <= 0.5f)
             {
-                Debug.Log("Kelek");
+
                 _scoreManager.ScorePlus(Kelek + (boyut * 100));
+
+                if (gem.CompareTag("GemG"))
+                {
+                    PanelController.goldG += (Kelek + (boyut * 100));
+
+                }
+                else if (gem.CompareTag("GemY"))
+                {
+                    PanelController.goldY += (Kelek + (boyut * 100));
+
+                }
+                else if (gem.CompareTag("GemP"))
+                {
+                    PanelController.goldP += (Kelek + (boyut * 100));
+
+                }
             }
             if (scale.x > 0.5f && scale.x <= 0.75f)
             {
-                Debug.Log("Buyumus");
+
                 _scoreManager.ScorePlus(Buyumus + (boyut * 100));
+
+                if (gem.CompareTag("GemG"))
+                {
+                    PanelController.goldG += (Buyumus + (boyut * 100));
+                    Debug.Log("Buyumus Yesil");
+                }
+                else if (gem.CompareTag("GemY"))
+                {
+                    PanelController.goldY += (Buyumus + (boyut * 100));
+                    Debug.Log("Buyumus Sarı");
+                }
+                else if (gem.CompareTag("GemP"))
+                {
+                    PanelController.goldP += (Buyumus + (boyut * 100));
+                    Debug.Log("Buyumus Mor");
+                }
 
             }
             if (scale.x > 0.75f && scale.x <= 1f)
             {
-                Debug.Log("Ergin");
-                _scoreManager.ScorePlus(Ergin + (boyut * 100));
 
+                _scoreManager.ScorePlus(Ergin + (boyut * 100));
+                if (gem.CompareTag("GemG"))
+                {
+                    PanelController.goldG += (Ergin + (boyut * 100));
+                    Debug.Log("Ergin Yesil");
+                }
+                else if (gem.CompareTag("GemY"))
+                {
+                    PanelController.goldY += (Ergin + (boyut * 100));
+                    Debug.Log("Ergin Sarı");
+                }
+                else if (gem.CompareTag("GemP"))
+                {
+                    PanelController.goldP += (Ergin + (boyut * 100));
+                    Debug.Log("Ergin Mor");
+                }
             }
             #endregion
 
             #region panelSayısıControl
             if (gem.gameObject.CompareTag("GemG"))
             {
-                PanelController.sellGreen += 1;
+                PanelController.soldGreen += 1;
+
             }
             if (gem.gameObject.CompareTag("GemY"))
             {
-                PanelController.sellYellow += 1;
+                PanelController.soldYellow += 1;
             }
             if (gem.gameObject.CompareTag("GemP"))
             {
-                PanelController.sellPurple += 1;
+                PanelController.soldPurple += 1;
             }
             #endregion
         }
